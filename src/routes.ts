@@ -1,22 +1,19 @@
 import { Router } from 'express';
 
-import { createUser } from './useCases/User/createUser';
-import { loginUser } from './useCases/auth/loginUser';
-import { getUsers } from './useCases/User/getUsers';
-import { editUser } from './useCases/User/editUser';
-import { deleteUser } from './useCases/User/deleteUser';
 
+import { loginUser } from './useCases/auth/loginUser';
+import UserController  from './controllers/userController';
 import { checkToken } from './middlewares/checkToken';
 
 export const router = Router();
 
 //Create new user
-router.post('/auth/register', createUser);
+router.post('/auth/register', UserController.store);
 
 router.post('/auth/login', loginUser);
 
-router.get('/users', checkToken, getUsers);
+router.get('/users', checkToken, UserController.index);
 
-router.put('/user/:id', checkToken, editUser);
+router.put('/user/:id', checkToken, UserController.update);
 
-router.delete('/user/:id', checkToken, deleteUser);
+router.delete('/user/:id', checkToken, UserController.delete);
