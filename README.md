@@ -14,7 +14,7 @@ A aplicação foi desenvolvida NodeJS e express usando JWT e bcrypt
 $ git clone https://github.com/joaoneto-hub/Desafio.git
 ```
 
-Para rodar o Back-end localmente, basta executar o seguinte comando na raíz da pasta:
+Para rodar o Back-end localmente, basta executar o seguinte comando na raíz do projeto:
 
 ```bash
 yarn dev
