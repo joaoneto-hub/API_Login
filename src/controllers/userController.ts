@@ -81,7 +81,7 @@ class UserController {
     }
     public async update(req: Request, res: Response){
         const _id  = req.params.id;
-        const { name, email, password, confirmedPassword } = req.body;
+        const { name, email, phone, password, confirmedPassword } = req.body;
 
         if(password !== confirmedPassword){
             return res.status(402).json({
@@ -95,6 +95,7 @@ class UserController {
         const data = {
             name,
             email,
+            phone,
             password: passwrodHash,
         };
 
